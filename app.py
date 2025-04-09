@@ -15,13 +15,22 @@ import re
 import time
 # Configure Gemini
 # Load environment variables from .env file
+import streamlit as st
+import os
+from dotenv import load_dotenv
+import google.generativeai as genai  # if you're using Gemini
+
+# Load .env file
 load_dotenv()
 
-# Access the Gemini API key
+# Get the API key
 api_key = os.getenv("GEMINI_API_KEY")
 
-# Configure Gemini
+# Configure Gemini or any other use
 genai.configure(api_key=api_key)
+
+st.title("Gemini AI Streamlit App 🚀")
+st.write("API key loaded from .env and configured successfully.")
 
 # ----------------------
 # Utility Functions
